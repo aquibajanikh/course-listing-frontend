@@ -8,6 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
 import IndividualCourses from "./student/IndividualCourse";
+import HelpPage from "./student/HelpPage";
+import SupportScreen from "./admin/SupportScreen";
+import Signup from "./student/Signup";
+import Login from "./student/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -16,8 +20,12 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<ViewCourses />} />
-        <Route path="/:id" element={<IndividualCourses />} />
+        <Route path="/student/signup" element={<Signup />} />
+        <Route path="/student/login" element={<Login />} />
+        <Route path="/course/:id" element={<IndividualCourses />} />
         <Route path="/admin" element={<ManageCourses />} />
+        <Route path="/support" element={<HelpPage />} />
+        <Route path="/admin/support" element={<SupportScreen />} />
       </Routes>
     </BrowserRouter>
   </Provider>

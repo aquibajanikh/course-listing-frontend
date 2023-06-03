@@ -5,13 +5,25 @@ const CourseCard = (props) => {
     <div
       key={props.id}
       style={{
-        width: "30%",
-        margin: "50px",
+        margin: "30px",
+        textAlign: "center",
+        border: "1px solid black",
+        paddingBottom: "20px",
+        borderRadius: "10px",
       }}
     >
-      <h2>{props.title}</h2>
-      <h3>{props.price}</h3>
-      <Link to={`/${props.id}`}>
+      <img
+        src={props.courseImg}
+        style={{
+          width: "100%",
+          borderTopLeftRadius: "10px",
+          borderTopRightRadius: "10px",
+        }}
+        alt={props.title}
+      />
+      <h4 style={{ marginTop: "20px" }}>{props.title}</h4>
+      <h5>{props.price}</h5>
+      <Link to={`/course/${props.id}`}>
         <button>View Details</button>
       </Link>
     </div>
